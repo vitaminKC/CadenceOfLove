@@ -12,23 +12,19 @@ pygame.display.set_caption('Cadence of Love')
 clock = pygame.time.Clock()
 
 
-# #Here are the colors I use
+#Here are the colors I use
 WHITE = (255, 243, 253)
-DARK_PINK = (185,88,152)
-PURPLE = (222, 205, 247)
-BLUE = (48, 162, 236)
 BLACK = (0,0,0)
 
-#Here are all the texts in the title screen and their positions on the screen.
-font0 = pygame.font.Font('./start_screen/Domotika-Pro-Light-trial.ttf', 32)
+#This is the font imported for the "click to start".
+font = pygame.font.Font('./start_screen/Domotika-Pro-Light-trial.ttf', 32)
 
-
-# font = pygame.font.SysFont('arial', 60, bold=True)
-start1_text = font0.render('Click Anywhere To Start', True, BLACK)
+#Here the "click to start" is made a surface
+start1_text = font.render('Click Anywhere To Start', True, BLACK)
 start1_text_rect = start1_text.get_rect()
 start1_text_rect.midtop = (WINDOW_WIDTH // 2 - 6, 454)
 
-# #I added spongebob and patty images for the game and placed them on the screen
+# #I added the images used for the title screen and placed them on the screen
 start_image = pygame.image.load('./start_screen/start_image.png')
 start_rect = start_image.get_rect()
 start_rect.midleft = (320, WINDOW_HEIGHT // 2)
@@ -48,6 +44,8 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+
+    #The start screen is loaded first, but when the mouse is pressed, it moves to the next display
     start_screen = True
     while start_screen:
         screen.blit(screen,(0,0))
@@ -59,11 +57,11 @@ while running:
         for event in pygame.event.get():
                 if event.type == pygame.MOUSEBUTTONDOWN:
                      start_screen = False
+                     
     while not start_screen:
         screen.blit(test_surface, (0,0))
         pygame.display.update()
 
-    #This puts the writing and design on the screen.
     
     clock.tick(60)
 
