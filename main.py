@@ -15,6 +15,7 @@ background = pygame.image.load('./background/classroom.png')
 scaled_bg = pygame.transform.scale(background, (1270, 750))
 textbox = pygame.image.load('./misc/textbox.png')
 scaled_box = pygame.transform.scale(textbox, (1150, 320))
+textFont = pygame.font.Font
 
 #Cadence emotions
 sprite0 = pygame.image.load('./uniform_sprites/normal_c.png').convert_alpha()
@@ -57,10 +58,7 @@ while True:
     screen.blit(sprite.getImage(), (spriteX, spriteY))
     screen.blit(scaled_box, (60, 455))
 
-    if pygame.mouse.get_pressed()[0]:
-        sprite = emotions[1]
-        screen.blit(sprite.getImage(), (spriteX, spriteY))
-        pygame.display.update()
+
         
     
     pygame.display.update()
