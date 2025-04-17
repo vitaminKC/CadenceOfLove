@@ -24,3 +24,21 @@ class dust(pygame.sprite.Sprite):
         super().__init__()
         self.image = pygame.image.load('./minigame_images/dust.png')
         self.rect = self.image.get_rect(midbottom = (random.randint(280,995), random.randint(160,750)))
+
+
+def collision_sprite(score, mc, dust, dust_class):
+    if pygame.sprite.spritecollide(mc.sprite, dust, True):
+        score += 1
+        dust.add(dust_class())
+    return score
+
+def display_score(score, font, BLUE, screen):
+    score_surf = font.render(f'Score: '+str(score),False,BLUE)
+    score_rect = score_surf.get_rect(center = (560,95))
+    screen.blit(score_surf,score_rect)
+
+
+def display_time(counter, font, BLUE, screen):
+    time_surf = font.render(f'Time: {counter}',False,BLUE)
+    time_rect = time_surf.get_rect(center = (560,60))
+    screen.blit(time_surf,time_rect)
