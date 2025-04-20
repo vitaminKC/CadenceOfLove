@@ -108,4 +108,4 @@ label intro:
         pov "I'm going to tell her how I feel."
         pov "I have one week left to try to win her over."
         pov "I won't graduate with any regrets, no matter how it ends."
-        jump intro_text
+        jump intro_text 
