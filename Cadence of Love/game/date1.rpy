@@ -31,21 +31,23 @@ label date1:
     pov "\"Same here.\""
     pov "\"I've been avoiding spoilers like my life depends on it.\""
 
+    # Allow user to compliment her outfit
     menu: 
         "Compliment her outfit":
             $ pos = True
             $ affection += 10
-            jump movieChoice1
+            jump movieCompliment
         
         "Continue":
-            jump movieCommon1
+            jump movieSnack
 
         "\"Red isn't really your color\"":
             $ neg = True
             $ affection -= 10
-            jump movieChoice1
-        
-    label movieChoice1:
+            jump movieCompliment
+    
+    # Compliment response
+    label movieCompliment:
         if pos:
             $ pos = False
             "You admire the effort Cadence put into her outfit."
@@ -59,7 +61,7 @@ label date1:
             show movie shy_o at smallSize, default_pos
             c  "\"T-thank you. I was hoping you'd notice.\""
 
-            jump movieCommon1
+            jump movieSnack
         
         if neg:
             $ neg = False
@@ -74,9 +76,10 @@ label date1:
             c  "\"Why would you say something like that?\""
             c  "\"Whatever, let's just go.\""
             
-            jump movieCommon1
+            jump movieSnack
 
-    label movieCommon1:
+    # Snack scene
+    label movieSnack:
         scene bg movie
 
         show movie normal_c at smallSize, default_pos
@@ -86,17 +89,18 @@ label date1:
         menu: 
             "Nerds candy":
                 $ neg = True
-                jump movieChoice2
+                jump movieSnackChoice
              
             "Popcorn":
                 $ pos = True
-                jump movieChoice2
+                jump movieSnackChoice
             
             "Chocolate":
                 $ neut = True
-                jump movieChoice2
+                jump movieSnackChoice
 
-    label movieChoice2: 
+    # Snack response
+    label movieSnackChoice: 
         if pos: 
             $ pos = False
             pov "\"Want to split some popcorn?\""
@@ -108,7 +112,7 @@ label date1:
             show movie excited_o at smallSize, default_pos
             c  "\"Absolutely!\""
             c  "\"You do know the way to my heart!\""
-            jump movieCommon2
+            jump movieViewing
 
         if neut: 
             $ neut = False
@@ -121,7 +125,7 @@ label date1:
             show movie excited_o at smallSize, default_pos
 
             c  "\"I might steal a piece when you're not looking!\""
-            jump movieCommon1
+            jump movieViewing
 
         if neg: 
             $ neg = False
@@ -134,13 +138,14 @@ label date1:
             show movie upset_o at smallSize, default_pos
             c  "\"Ew, you mean the candy equivalent of gravel?\"" 
             c  "\"I'll pass.\"" 
-            jump movieCommon1
+            jump movieViewing
        
-
-    label movieCommon2: 
+    # Post movie
+    label movieViewing: 
         show movie normal_c at smallSize, default_pos
 
-        "test"
+        "With sncaks in hand, the two of you find your seats and settle in as the lights dim."
+
 
 
         

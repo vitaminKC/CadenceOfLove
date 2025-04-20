@@ -38,7 +38,8 @@ label start:
     $ povname = renpy.input("What is your name?")
     $ povname = povname.strip()
 
-    jump intro
+    # should start at intro 
+    jump date1
 
     
 
