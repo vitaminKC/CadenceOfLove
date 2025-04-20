@@ -144,7 +144,37 @@ label date1:
     label movieViewing: 
         show movie normal_c at smallSize, default_pos
 
-        "With sncaks in hand, the two of you find your seats and settle in as the lights dim."
+        "With snacks in hand, the two of you find your seats and settle in as the lights dim."
+
+        scene bg movie_outside
+
+        "After the movie..."
+
+        show movie excited_o at smallSize, default_pos
+        c  "\"That was so much fun!\""
+
+        show movie normal_o at smallSize, default_pos
+        c  "\"Thanks for inviting me.\""
+
+        show movie shy_o at smallSize, default_pos
+        c  "\"..and for not talking through the whole movie.\""
+
+        show movie normal_c at smallSize, default_pos
+        "Cadence winks."
+
+        pov "\"It was fun for me as well.\""
+        pov "\"I'll always have a good time, as long as it's with you.\""
+
+        show movie shy_o at smallSize, default_pos
+        c  "\"Is that so?\""
+
+        show movie normal_o at smallSize, default_pos
+        c  "\"I guess we'll both be looking forward to the next time we hang out together.\""
+
+        show movie excited_c at smallSize, default_pos
+        "She waves goodbye and disappears into the crowd with a lingering smile."
+
+        jump WorkDay
 
 
 
