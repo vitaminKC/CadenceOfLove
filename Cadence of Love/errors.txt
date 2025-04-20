@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 65: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
-    "\"You.\""
-              ^
+The label choice0 is defined twice, at File "game/intro.rpy", line 55:
+    label choice0: 
+and File "game/script.rpy", line 75:
+    label choice0: 
+
+
+The label common is defined twice, at File "game/intro.rpy", line 106:
+    label common: 
+and File "game/script.rpy", line 126:
+    label common: 
+
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat Apr 19 20:08:06 2025
+Sat Apr 19 20:48:31 2025
