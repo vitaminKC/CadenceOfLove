@@ -107,5 +107,5 @@ label intro:
         pov "Alright, I've decided."
         pov "I'm going to tell her how I feel."
         pov "I have one week left to try to win her over."
-        pov "I won't graduate with any regret, no matter how it ends."
+        pov "I won't graduate with any regrets, no matter how it ends."
         jump intro_text
