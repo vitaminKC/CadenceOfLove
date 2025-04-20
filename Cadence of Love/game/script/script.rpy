@@ -17,6 +17,10 @@ label start:
     scene bg classroom 
     with fade
 
+    default pos = False
+    default neut = False
+    default neg = False
+
     jump intro
 
     

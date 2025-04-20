@@ -35,73 +35,72 @@ label intro:
 
     c "\"Hellooo? What are you thinking about so deeply?\""
 
-    default pos = False
-    default neut = False
-    default neg = False
-
     menu: 
         "\"You.\"":
             $ pos = True
-            jump choice0
+            jump introChoice
 
         "\"Nothing, don't worry about it.\"":
             $ neut = True
-            jump choice0
+            jump introChoice
 
         "\"Mind your own business.\"":
             $ neg = True
-            jump choice0
+            jump introChoice
 
-    label choice0: 
+    label introChoice: 
         if pos: 
-                show uniform normal_c at smallSize, default_pos
+            $ pos = False
+            show uniform normal_c at smallSize, default_pos
 
-                pov "\"You.\""
+            pov "\"You.\""
 
-                show uniform flustered_c at smallSize, default_pos
+            show uniform flustered_c at smallSize, default_pos
 
-                "Cadence blushes."
+            "Cadence blushes."
 
-                show uniform flustered_o at smallSize, default_pos
+            show uniform flustered_o at smallSize, default_pos
 
-                c "\"Don't joke around like that!\""
+            c "\"Don't joke around like that!\""
 
-                show uniform shy_c at smallSize, default_pos
+            show uniform shy_c at smallSize, default_pos
 
-                "She turns back around."
+            "She turns back around."
 
-                jump common
+            jump common
 
         if neut: 
-                show uniform normal_c at smallSize, default_pos
+            $ neut = False
+            show uniform normal_c at smallSize, default_pos
 
-                pov "\"Nothing, don't worry about it.\""
+            pov "\"Nothing, don't worry about it.\""
 
-                show uniform normal_o at smallSize, default_pos
+            show uniform normal_o at smallSize, default_pos
                 
-                c "\"If you say so!\""
+            c "\"If you say so!\""
 
-                show uniform normal_c at smallSize, default_pos
+            show uniform normal_c at smallSize, default_pos
 
-                "She turns back around."
+            "She turns back around."
 
-                jump common
+            jump common
 
         if neg: 
-                show uniform normal_c at smallSize, default_pos
+            $ neg = False
+            show uniform normal_c at smallSize, default_pos
 
-                pov "\"Mind your own business.\""
+            pov "\"Mind your own business.\""
 
-                show uniform angry_o at smallSize, default_pos
+            show uniform angry_o at smallSize, default_pos
 
-                c "Jeez, it was just a question."
-                c "You don't have to tell me."
+            c "\"Jeez, it was just a question.\""
+            c "\"You don't have to tell me.\""
 
-                show uniform angry_c at smallSize, default_pos
+            show uniform angry_c at smallSize, default_pos
 
-                "Cadence frowns and turns back."
+            "Cadence frowns and turns back."
 
-                jump common
+            jump common
 
     label common: 
 
@@ -109,3 +108,4 @@ label intro:
         pov "I'm going to tell her how I feel."
         pov "I have one week left to try to win her over."
         pov "I won't graduate with any regret, no matter how it ends."
+        jump intro_text

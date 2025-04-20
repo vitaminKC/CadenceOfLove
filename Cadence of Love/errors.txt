@@ -2,17 +2,9 @@
 errors listed below, and try again.
 
 
-The label choice0 is defined twice, at File "game/intro.rpy", line 55:
-    label choice0: 
-and File "game/script.rpy", line 75:
-    label choice0: 
-
-
-The label common is defined twice, at File "game/intro.rpy", line 106:
-    label common: 
-and File "game/script.rpy", line 126:
-    label common: 
-
+File "game/intro.rpy", line 90: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    show uniform normal_c at smallSize, default_pos
+    ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat Apr 19 20:48:31 2025
+Sat Apr 19 21:16:50 2025
