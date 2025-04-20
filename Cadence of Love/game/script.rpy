@@ -28,7 +28,7 @@ default money = 0
 ## 3 - graduation
 default day = 0
 
-label start:
+label start: 
 
     scene bg classroom 
     with fade
@@ -39,7 +39,7 @@ label start:
     $ povname = povname.strip()
 
     # should start at intro 
-    jump date1
+    jump intro
 
     
 

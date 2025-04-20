@@ -89,10 +89,12 @@ label date1:
         menu: 
             "Nerds candy":
                 $ neg = True
+                $ affection -= 10
                 jump movieSnackChoice
              
             "Popcorn":
                 $ pos = True
+                $ affection += 10
                 jump movieSnackChoice
             
             "Chocolate":
@@ -174,7 +176,7 @@ label date1:
         show movie excited_c at smallSize, default_pos
         "She waves goodbye and disappears into the crowd with a lingering smile."
 
-        jump WorkDay
+        jump date1Text
 
 
 
