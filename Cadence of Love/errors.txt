@@ -2,9 +2,41 @@
 errors listed below, and try again.
 
 
-File "game/intro.rpy", line 90: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    show uniform normal_c at smallSize, default_pos
-    ^
+The label intro is defined twice, at File "game/intro.rpyc", line 1:
+
+and File "game/script/intro.rpy", line 1:
+label intro:
+
+
+The label introChoice is defined twice, at File "game/intro.rpyc", line 51:
+
+and File "game/script/intro.rpy", line 51:
+    label introChoice: 
+
+
+The label common is defined twice, at File "game/intro.rpyc", line 105:
+
+and File "game/script/intro.rpy", line 105:
+    label common: 
+
+
+The label intro_text is defined twice, at File "game/intro_text.rpyc", line 1:
+
+and File "game/script/intro_text.rpy", line 1:
+label intro_text: 
+
+
+The label introTextChoices is defined twice, at File "game/intro_text.rpyc", line 24:
+
+and File "game/script/intro_text.rpy", line 26:
+    label introTextChoices:
+
+
+The label introTextCommon is defined twice, at File "game/intro_text.rpyc", line 58:
+
+and File "game/script/intro_text.rpy", line 60:
+    label introTextCommon:
+
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat Apr 19 21:16:50 2025
+Sat Apr 19 22:01:26 2025
