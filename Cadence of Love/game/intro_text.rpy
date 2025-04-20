@@ -51,7 +51,7 @@ label intro_text:
             $ neg = False
             "You left her on read."
 
-            show uniform upset_o at smallSize, default_pos
+            show uniform angry_o at smallSize, default_pos
 
             c "\"ill c u tmrw ig\""
 
