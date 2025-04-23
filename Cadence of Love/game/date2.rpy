@@ -81,7 +81,7 @@ label date2:
 
     label studyHelpScene: 
         show uniform upset_c at smallSize, default_pos
-        "Some times has passed and Cadence is still staring intently at the problem she's working on."
+        "Some time has passed and Cadence is still staring intently at the problem she's working on."
 
         show uniform upset_o at smallSize, default_pos
         c "\"I've been trying to solve this problem and I just can't figure it out.\""
@@ -190,7 +190,7 @@ label date2:
             jump ending
 
     label studyEnding:
-        "test"
+        
 
 
 
