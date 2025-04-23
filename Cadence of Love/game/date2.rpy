@@ -2,6 +2,7 @@ label date2:
     scene bg study
 
     pov "Today is my second date with Cadence."
+    pov "I don't know if I'm more nervous for our upcoming physics test or this date."
 
     show uniform normal_c at smallSize, default_pos
 
@@ -190,6 +191,46 @@ label date2:
             jump ending
 
     label studyEnding:
+        scene bg outside
+        "After a whole day of studying, you offer to walk Cadence home."
+
+        show uniform normal_o at smallSize, default_pos
+
+        c "\"Thank you for all the physics help today.\""
+
+        show uniform excited_o at smallSize, default_pos
+        c "\"On top of all that help, you even walked me home!\""
+
+        show uniform normal_c at smallSize, default_pos
+        pov "\"I wanted to make sure you got home safe.\""
+        pov "\"After all...\""
+        pov "\"You're someone really special to me.\""
+
+        show uniform shy_o at smallSize, default_pos
+        c "\"Is that so...\""
+        c "\"I...\""
+
+        show uniform shy_c at smallSize, default_pos
+        "Cadence thinks to herself for a moment."
+
+        show uniform shy_o at smallSize, default_pos
+        c "\"Actually..\""
+        c "\"Nevermind.\""
+
+        show uniform shy_o at smallSize, default_pos
+        c "\"I really appreciate the help today.\""
+        c "\"I'll catch you later!\""
+
+        scene bg outside
+        "Cadence turns around quickly and enters her house..."
+        "Leaving you wondering how she really feels..."
+
+        jump ending
+
+
+
+        
+
         
 
 
