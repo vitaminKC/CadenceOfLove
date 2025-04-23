@@ -36,7 +36,7 @@ label intro:
     menu: 
         "\"You.\"":
             $ pos = True
-            $ affection += 10
+            $ cadence.addAffection()
             jump introChoice
 
         "\"Nothing, don't worry about it.\"":
@@ -45,7 +45,7 @@ label intro:
 
         "\"Mind your own business.\"":
             $ neg = True
-            $ affection -= 10
+            $ cadence.subAffection()
             jump introChoice
 
     label introChoice: 

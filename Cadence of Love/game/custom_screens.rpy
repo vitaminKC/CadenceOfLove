@@ -17,5 +17,5 @@ screen StatsUI:
             # Values Column     
             vbox:    
                 spacing 10
-                text "[affection]" size 20
-                text "[money]" size 20
+                text "[cadence.getAffection()]" size 20
+                text "[cadence.getMoney()]" size 20

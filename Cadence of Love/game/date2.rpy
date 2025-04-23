@@ -11,7 +11,7 @@ label date2:
     menu: 
         "Walk up from behind her and scare her.": 
             $ neg = True
-            $ affection -= 10
+            $ cadence.subAffection()
             jump studyChoices
 
         "Sit across from her and wait until she notices.":
@@ -20,7 +20,7 @@ label date2:
 
         "Walk up and greet her.":
             $ pos = True
-            $ affection += 10
+            $ cadence.addAffection()
             jump studyChoices
 
     label studyChoices:
@@ -91,7 +91,7 @@ label date2:
         menu:
             "Offer to help.":
                 $ pos = True
-                $ affection += 10
+                $ cadence.addAffection()
                 jump studyHelpChoice
 
             "Encourage her.":
@@ -100,7 +100,7 @@ label date2:
             
             "\"How are you getting stuck on something like that?\"":
                 $ neg = True
-                $ affection -= 10
+                $ cadence.subAffection()
                 jump studyHelpChoice
 
     label studyHelpChoice:

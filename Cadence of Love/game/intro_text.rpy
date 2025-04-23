@@ -11,7 +11,7 @@ label intro_text:
     menu: 
         "\"Heyyyyy\"": 
             $ pos = True
-            $ affection += 10
+            $ cadence.addAffection()
             jump introTextChoices
         
         "\"Do you need something?\"":
@@ -20,7 +20,7 @@ label intro_text:
 
         "Leave her on read.":
             $ neg = True
-            $ affection -= 10
+            $ cadence.subAffection()
             jump introTextChoices
 
     label introTextChoices:

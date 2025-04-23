@@ -11,7 +11,7 @@ label date1:
 
     "You spot Cadence near the entrance of the movie theater." 
 
-    if affection >= 50:
+    if cadence.getAffection() >= 50:
         show movie excited_c at smallSize, default_pos
 
         "She lights up when she sees you."
@@ -35,7 +35,7 @@ label date1:
     menu: 
         "Compliment her outfit":
             $ pos = True
-            $ affection += 10
+            $ cadence.addAffection()
             jump movieCompliment
         
         "Continue":
@@ -43,7 +43,7 @@ label date1:
 
         "\"Red isn't really your color\"":
             $ neg = True
-            $ affection -= 10
+            $ cadence.subAffection()
             jump movieCompliment
     
     # Compliment response
@@ -89,12 +89,12 @@ label date1:
         menu: 
             "Nerds candy":
                 $ neg = True
-                $ affection -= 10
+                $ cadence.subAffection()
                 jump movieSnackChoice
              
             "Popcorn":
                 $ pos = True
-                $ affection += 10
+                $ cadence.addAffection()
                 jump movieSnackChoice
             
             "Chocolate":

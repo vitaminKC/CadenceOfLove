@@ -22,12 +22,12 @@ label date1Text:
         
         "Romance":
             $ pos = True
-            $ affection += 10
+            $ cadence.addAffection()
             jump movieTextResponse
 
         "\"I hate movies.\"":
             $ neg = True
-            $ affection -= 10
+            $ cadence.subAffection()
             jump movieTextResponse
 
     label movieTextResponse:

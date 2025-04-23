@@ -1,8 +1,5 @@
 ﻿# The script of the game goes in this file.
 
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
 define c = Character("Cadence")
 define n = Character()
 define pov = Character("[povname]")
@@ -18,8 +15,7 @@ default neut = False
 default neg = False
 
 # For stat lines
-default affection = 50
-default money = 0
+default cadence = Cadence(50, 0)
 
 # Keep track of days (update after work day/shop)
 ## 0 - intro
@@ -39,7 +35,7 @@ label start:
     $ povname = povname.strip()
 
     # should start at intro 
-    jump date2
+    jump intro
 
     
 
