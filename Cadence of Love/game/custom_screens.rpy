@@ -69,10 +69,9 @@ screen dust_game():
     # Player 
     add "images/minigame mc.png":
         xpos (1280 - 720) // 2 + player.x * cell_size
-        ypos player.y * cell_size
-        xsize 49
-        ysize cell_size
-
+        ypos player.y * cell_size - cell_size
+        xsize 90
+        ysize 180
 
     text "Points: [dust_collected]":
         xpos 500
