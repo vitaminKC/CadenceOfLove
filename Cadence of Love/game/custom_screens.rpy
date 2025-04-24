@@ -23,7 +23,6 @@ screen StatsUI:
 
 
 screen dust_game_menu():
-    # tag minigame
 
     add Solid("#000000")
     add "images/bg minigame.png":
@@ -31,13 +30,7 @@ screen dust_game_menu():
         ypos 0
         xsize 720
         ysize 720
-    
-    text "Use arrow keys to move around and clean up the dust":
-        xpos 640
-        ypos 670
-        xanchor 0.5  
-        size 20
-        color "#000000"
+
 
     imagebutton:
         idle "minigame start.png"
@@ -52,7 +45,6 @@ screen dust_game_menu():
 
 
 screen dust_game():
-    # tag minigame
     # Minigame background 
     add Solid("#000000")
     add "images/bg minigame.png":
@@ -78,7 +70,7 @@ screen dust_game():
     add "images/minigame mc.png":
         xpos (1280 - 720) // 2 + player.x * cell_size
         ypos player.y * cell_size
-        xsize cell_size
+        xsize 49
         ysize cell_size
 
 

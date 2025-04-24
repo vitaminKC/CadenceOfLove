@@ -35,7 +35,7 @@ label start:
     $ povname = povname.strip()
 
     # should start at intro 
-    jump date2
+    jump intro
 
     
 
