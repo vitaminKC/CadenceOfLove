@@ -59,7 +59,7 @@ label date1Text:
             show uniform normal_o at smallSize, default_pos
             c "\"ig ill see you at school tmrw :)\""
 
-            jump WorkDay
+            jump StartWork
 
         if neut: 
             $ neut = False
@@ -75,7 +75,7 @@ label date1Text:
             c "\"i should probably head to bed\""
             c "\"c u tmrw!\""
 
-            jump WorkDay
+            jump StartWork
         
         if neg: 
             $ neg = False
@@ -86,7 +86,7 @@ label date1Text:
             c "\"y bother taking me to one then?\""
             c "\"i gtg. c u tmrw\""
 
-            jump WorkDay
+            jump StartWork
 
 
 

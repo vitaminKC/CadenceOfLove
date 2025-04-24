@@ -55,7 +55,7 @@ label intro_text:
 
             c "\"ill c u tmrw ig\""
 
-            jump WorkDay
+            jump StartWork
 
     label introTextCommon:
         show uniform normal_o at smallSize, default_pos
@@ -70,7 +70,7 @@ label intro_text:
 
         c "\"okayy, js making sure! c u tmrw! ^^\""
 
-        jump WorkDay
+        jump StartWork
 
 
 
