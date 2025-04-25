@@ -25,7 +25,7 @@ screen StatsUI:
 screen dust_game_menu():
 
     add Solid("#000000")
-    add "images/bg minigame.png":
+    add "bg minigame.png":
         xpos (1280 - 720) // 2
         ypos 0
         xsize 720
@@ -33,21 +33,20 @@ screen dust_game_menu():
 
 
     imagebutton:
-        idle "minigame start.png"
-        hover "minigame start.png"
-        action Start(label="WorkDay")
         xpos 480
         ypos 290
         xsize 50
         ysize 50
         xanchor 0.5
+        idle "minigame start.png"
+        action Jump("WorkDay")
         
 
 
 screen dust_game():
     # Minigame background 
     add Solid("#000000")
-    add "images/bg minigame.png":
+    add "bg minigame.png":
         xpos (1280 - 720) // 2
         ypos 0
         xsize 720
@@ -60,14 +59,14 @@ screen dust_game():
     key "K_RIGHT" action Function(try_move_player, 1, 0)
 
     # Dust 
-    add "images/minigame dust.png":
+    add "minigame dust.png":
         xpos (1280 - 720) // 2 + dust.x * cell_size
         ypos dust.y * cell_size
         xsize cell_size
         ysize cell_size
 
     # Player 
-    add "images/minigame mc.png":
+    add "minigame mc.png":
         xpos (1280 - 720) // 2 + player.x * cell_size
         ypos player.y * cell_size - cell_size
         xsize 90
@@ -90,3 +89,50 @@ screen dust_game():
     
 
 
+screen shop():
+    add Solid("#f9dcf6")
+
+    imagebutton:
+        xpos 1010
+        ypos 500
+        idle "shop next.png"
+        action Jump ("EndShop")
+
+    imagebutton:
+        xpos 160
+        ypos 170
+        idle "shop teddy.png"
+        action Function(player_items.buy_teddy)
+
+    text "Teddy Bear: $15":
+        xpos 220
+        ypos 450 
+        size 20
+        color "#000000"
+
+
+    imagebutton:
+        xpos 480
+        ypos 170
+        idle "shop choco.png"
+        action Function(player_items.buy_choco)
+
+    text "Chocolates: $25":
+        xpos 550
+        ypos 450 
+        size 20
+        color "#000000"
+
+
+    imagebutton:
+        xpos 800
+        ypos 170
+        idle "shop flower.png"
+        action Function(player_items.buy_flowers)
+
+    text "Flowers: $35":
+        xpos 855
+        ypos 450 
+        size 20
+        color "#000000"
+    

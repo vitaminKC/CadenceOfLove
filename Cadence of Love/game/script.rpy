@@ -17,6 +17,13 @@ default neg = False
 # For stat lines
 default cadence = Cadence(50, 0)
 
+
+# For shop
+define flowers = 0
+define chocolates = 0
+define teddies = 0
+define item = ""
+
 # Keep track of days (update after work day/shop)
 ## 0 - intro
 ## 1 - date 1
