@@ -22,27 +22,17 @@ screen StatsUI:
 
 
 
+# Start screen for minigame
 screen dust_game_menu():
-
     add Solid("#000000")
     add "bg minigame.png":
         xpos (1280 - 720) // 2
         ypos 0
         xsize 720
         ysize 720
-
-
-    imagebutton:
-        xpos 480
-        ypos 290
-        xsize 50
-        ysize 50
-        xanchor 0.5
-        idle "minigame start.png"
-        action Jump("WorkDay")
         
 
-
+# Minigame screen
 screen dust_game():
     # Minigame background 
     add Solid("#000000")
@@ -58,29 +48,32 @@ screen dust_game():
     key "K_LEFT" action Function(try_move_player, -1, 0)
     key "K_RIGHT" action Function(try_move_player, 1, 0)
 
-    # Dust 
+    # Spawns dust 
     add "minigame dust.png":
         xpos (1280 - 720) // 2 + dust.x * cell_size
         ypos dust.y * cell_size
         xsize cell_size
         ysize cell_size
 
-    # Player 
+    # Spawns player 
     add "minigame mc.png":
         xpos (1280 - 720) // 2 + player.x * cell_size
         ypos player.y * cell_size - cell_size
         xsize 90
         ysize 180
 
+    # Displays game score
     text "Points: [dust_collected]":
         xpos 500
         ypos 40 
         size 20
         color "#ffdefb"
 
+    # Timer
     timer 1.0 repeat True action Function(decrement_timer)
     timer game_time action Jump ("EndWork")
-        
+
+    # Displays time    
     text "Time: [game_time]":
         xpos 500
         ypos 70 
@@ -88,7 +81,7 @@ screen dust_game():
         color "#ffdefb"
     
 
-
+# Shop screen
 screen shop():
     add Solid("#f9dcf6")
 
@@ -101,12 +94,15 @@ screen shop():
         xpos 40
         ypos 500
 
+    #Next button
     imagebutton:
         xpos 1010
         ypos 500
         idle "shop next.png"
         action Jump ("EndShop")
 
+
+    # Item buttons to buy and text descriptions
     imagebutton:
         xpos 160
         ypos 170

@@ -1,15 +1,16 @@
 init python:
-
+    # Base class
     class Entity:
         def __init__(self, x, y):
             self.x = x
             self.y = y
-
+        
+        # Moves entity
         def move(self, dx, dy, max_x, max_y):
             self.x = max(0, min(self.x + dx, max_x - 1))
             self.y = max(2, min(self.y + dy, max_y - 1))
 
-
+    # Player and dust inherit Entity position and move
     class Player(Entity):
         pass
 
@@ -24,15 +25,18 @@ init python:
                     self.y = new_y
                     break
 
+    # Defines game grid
     grid_size = 8  
     cell_size = 90  
 
+    # Spawns player and dust
     player = Player(3, 3)
     dust = Dust(0, 0)
     dust.respawn(grid_size, grid_size, player)
 
     dust_collected = 0
 
+    # Moves Player
     def try_move_player(dx, dy):
         global dust_collected
         player.move(dx, dy, grid_size, grid_size)
@@ -42,7 +46,7 @@ init python:
             dust.respawn(grid_size, grid_size, player)
 
 
-    
+    # Timer
     def decrement_timer():
         global game_time
         game_time -= 1

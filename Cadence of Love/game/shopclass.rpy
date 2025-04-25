@@ -5,12 +5,14 @@ init python:
             self.flowers = flowers
             self.choco = choco
 
+        # Buys a teddy bear for $30 and adds affection
         def buy_teddy(self):
             if cadence.getMoney() >= 30:
                 self.teddy += 1
                 cadence.subMoney(30)
                 cadence.addAffection()
 
+        # Buys flowers for $70 and adds affection
         def buy_flowers(self):
             if cadence.getMoney() >= 70:
                 self.flowers += 1
@@ -19,13 +21,15 @@ init python:
                 cadence.addAffection()
                 cadence.addAffection()
 
+        # Buys chocolates for $50 and adds affection
         def buy_choco(self):
             if cadence.getMoney() >= 50:
                 self.choco += 1
                 cadence.subMoney(50)
                 cadence.addAffection()
                 cadence.addAffection()
-            
+        
+        # Resets items in inventory after affection is gained
         def reset_items(self):
             self.teddy = 0
             self.flowers = 0
