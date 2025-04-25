@@ -92,6 +92,15 @@ screen dust_game():
 screen shop():
     add Solid("#f9dcf6")
 
+    add "shop shop.png":
+        xpos 620
+        ypos 50
+        xanchor 0.5
+
+    add "shop cart.png":
+        xpos 40
+        ypos 500
+
     imagebutton:
         xpos 1010
         ypos 500
