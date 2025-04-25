@@ -113,7 +113,7 @@ screen shop():
         idle "shop teddy.png"
         action Function(player_items.buy_teddy)
 
-    text "Teddy Bear: $15":
+    text "Teddy Bear: $30":
         xpos 220
         ypos 450 
         size 20
@@ -126,7 +126,7 @@ screen shop():
         idle "shop choco.png"
         action Function(player_items.buy_choco)
 
-    text "Chocolates: $25":
+    text "Chocolates: $50":
         xpos 550
         ypos 450 
         size 20
@@ -139,7 +139,7 @@ screen shop():
         idle "shop flower.png"
         action Function(player_items.buy_flowers)
 
-    text "Flowers: $35":
+    text "Flowers: $70":
         xpos 855
         ypos 450 
         size 20

@@ -12,11 +12,10 @@ label shop:
 
 
 label EndShop:
-    "You bought [player_items.flowers] flowers, [player_items.choco] chocolates, and [player_items.teddy] teddy bears"
-    "Your affection went up by [player_items.shop_affection()]"
+    "You bought [player_items.flowers] flowers, [player_items.choco] chocolates, and [player_items.teddy] teddy bears."
+    "Your affection is now [cadence.getAffection()]."
 
 
-    # $ cadence.addAffection(player_items.shop_affection())
     $ player_items = (0, 0, 0)
 
     if day == 1:
