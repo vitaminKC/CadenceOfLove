@@ -1,33 +1,32 @@
 label StartWork:
+    # Total game time
     $ game_time = 30
+
+    # Displays the starting screen and instructions for the game
     show screen dust_game_menu
-    $ renpy.pause() 
+    "Use arrow keys to move around and clean up the dust and earn money to buy gifts for Cadence. \nClick to start"
 
 label WorkDay:
+    # Spawns the player and dust on the screen
     $ player = Player(3, 3)
     $ dust = Dust(0, 0)
     $ dust.respawn(grid_size, grid_size, player)
     $ dust_collected = 0
 
+    # Displays the screen for the minigame
+    show screen dust_game
     call screen dust_game
 
 label EndWork:
+    # Changes screen
     hide screen dust_game_menu
-    with fade
-    # scene bg classroom 
-    # with fade
+    scene black
 
+    # Adding money based off score
     $ cadence.addMoney(dust_collected)
     "Good work! You earned $[dust_collected]"
 
     $ day += 1
 
-    if day == 1:
-        jump date1
-
-    if day == 2: 
-        jump date2
-    
-    if day == 3: 
-        jump graduation
+    jump shop
     
