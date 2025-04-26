@@ -31,7 +31,7 @@ label goodEnding:
     show uniform normal_o at smallSize, default_pos
     c "\"Took you long enough.\""
 
-    show uniform excited_c at smallSize, default_pos
+    show uniform excited_o at smallSize, default_pos
     c "\"It's official!\""
     c "\"We've finished high school!\""
 

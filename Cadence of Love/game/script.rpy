@@ -43,7 +43,7 @@ label start:
     $ povname = povname.strip()
 
     # should start at intro 
-    jump ending
+    jump intro
 
     
 
