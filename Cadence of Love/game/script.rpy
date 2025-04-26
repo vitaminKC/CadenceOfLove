@@ -15,6 +15,7 @@ default neut = False
 default neg = False
 
 # For stat lines
+# Default affection should be 50
 default cadence = Cadence(50, 0)
 
 
