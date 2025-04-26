@@ -225,7 +225,7 @@ label date2:
         "Cadence turns around quickly and enters her house..."
         "Leaving you wondering how she really feels..."
 
-        jump ending
+        jump date2_text
 
 
 
