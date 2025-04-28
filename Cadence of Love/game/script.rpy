@@ -10,6 +10,8 @@ transform smallSize:
     zoom 0.65
 
 # For choice switching
+# Will switch to True when a choice is made
+# Switch back to False in the response block for the next time a choice is made
 default pos = False
 default neut = False
 default neg = False
@@ -29,7 +31,7 @@ define item = ""
 ## 0 - intro
 ## 1 - date 1
 ## 2 - date 2 
-## 3 - graduation
+## 3 - graduation (ending)
 default day = 0
 
 label start: 
@@ -42,7 +44,7 @@ label start:
     $ povname = renpy.input("What is your name?")
     $ povname = povname.strip()
 
-    # should start at intro 
+    # Should start at intro 
     jump intro
 
     
