@@ -9,22 +9,28 @@ label date2:
     "You find Cadence sitting alone at a table in the corner of the classroom." 
     "She stares intently at her work, not noticing you walk in."
 
+    # Greeting choices
     menu: 
+        # Negative choice
         "Walk up from behind her and scare her.": 
             $ neg = True
             $ cadence.subAffection()
-            jump studyChoices
+            jump studyResponse
 
+        # Neutral choice
         "Sit across from her and wait until she notices.":
             $ neut = True
-            jump studyChoices
+            jump studyResponse
 
+        # Positive choice
         "Walk up and greet her.":
             $ pos = True
             $ cadence.addAffection()
-            jump studyChoices
+            jump studyResponse
 
-    label studyChoices:
+    # Greet responses
+    label studyResponse:
+        # Positive response
         if pos:
             $ pos = False
             pov  "\"Hey!\""
@@ -42,6 +48,7 @@ label date2:
 
             jump studyHelpScene
 
+        # Neutral response
         if neut: 
             $ neut = False
             "You stand next to Cadence and watch her do her work."
@@ -62,6 +69,7 @@ label date2:
 
             jump studyHelpScene
 
+        # Negative response
         if neg: 
             $ neg = False
             "You walk up behind her and scare her."
@@ -80,6 +88,7 @@ label date2:
 
             jump studyHelpScene
 
+    # Helping Cadence with physics problem scene
     label studyHelpScene: 
         show uniform upset_c at smallSize, default_pos
         "Some time has passed and Cadence is still staring intently at the problem she's working on."
@@ -89,22 +98,30 @@ label date2:
         
         show uniform upset_c at smallSize, default_pos
 
+        # Help choices
         menu:
+            # Positive choice
             "Offer to help.":
                 $ pos = True
                 $ cadence.addAffection()
                 jump studyHelpChoice
 
+            # Neutral choice
             "Encourage her.":
                 $ neut = True
                 jump studyHelpChoice
             
+            # Negative choice
+            # This will end the date and skip to the ending (lose extra affection)
             "\"How are you getting stuck on something like that?\"":
                 $ neg = True
                 $ cadence.subAffection()
+                $ cadence.subAffection()
                 jump studyHelpChoice
 
+    # Help Response
     label studyHelpChoice:
+        # Positive response
         if pos: 
             $ pos = False
             pov  "\"Which problem are you working on?\""
@@ -148,6 +165,7 @@ label date2:
             
             jump studyEnding
 
+        # Neutral response
         if neut:
             $ neut = False
             pov "\"You got this.\""
@@ -166,6 +184,8 @@ label date2:
 
             jump studyEnding
 
+        # Negative response
+        # Should skip directly to ending (end date)
         if neg:
             $ neg = False
             pov "\"How are you getting stuck on something like that?\""
@@ -226,18 +246,3 @@ label date2:
         "Leaving you wondering how she really feels..."
 
         jump date2_text
-
-
-
-        
-
-        
-
-
-
-
-
-
-
-
-    
