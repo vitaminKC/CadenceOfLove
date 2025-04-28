@@ -14,6 +14,7 @@ label ending:
     "You walk up behind her."
     show uniform excited_c at smallSize, default_pos
 
+    # if-else statement logic for good/normal/bad ending
     if cadence.getAffection() >= 120:
         jump goodEnding 
 
