@@ -8,16 +8,20 @@ label intro_text:
 
     c "\"hiiiii!\""
 
+    # Text choices
     menu: 
+        # Positive choice
         "\"Heyyyyy\"": 
             $ pos = True
             $ cadence.addAffection()
             jump introTextChoices
         
+        # Neutral choice
         "\"Do you need something?\"":
             $ neut = True
             jump introTextChoices
 
+        # Negative choice
         "Leave her on read.":
             $ neg = True
             $ cadence.subAffection()
@@ -26,6 +30,7 @@ label intro_text:
     label introTextChoices:
         show uniform excited_c at smallSize, default_pos
 
+        # Positive response
         if pos: 
             $ pos = False
             pov "\"Heyyyyy\""
@@ -37,6 +42,7 @@ label intro_text:
 
             jump introTextCommon
 
+        # Neutral response
         if neut: 
             $ neut = False
             pov "\"Do you need something?\""
@@ -47,6 +53,7 @@ label intro_text:
 
             jump introTextCommon
         
+        # Negative response
         if neg: 
             $ neg = False
             "You left her on read."
