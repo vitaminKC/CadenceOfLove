@@ -1,4 +1,5 @@
 ## Stats UI
+# Used the stats UI from this video: https://youtu.be/vEU6MNkttSg?si=Yuw86UKpm3TzC9bh
 screen StatsUI:
     frame:
         xalign 0.9
