@@ -11,7 +11,8 @@ label date1:
 
     "You spot Cadence near the entrance of the movie theater." 
 
-    if cadence.getAffection() >= 50:
+    # Cadence will only be excited if affection is above 60
+    if cadence.getAffection() >= 60:
         show movie excited_c at smallSize, default_pos
 
         "She lights up when she sees you."
@@ -22,6 +23,7 @@ label date1:
         c  "\"I'm so pumped for this movie, you have no idea!\""
         c  "\"I've been counting down the days.\""
 
+    # Normal response
     else: 
         show movie normal_o at smallSize, default_pos
         c  "\"Hi!\""
@@ -48,6 +50,7 @@ label date1:
     
     # Compliment response
     label movieCompliment:
+        # Positive response
         if pos:
             $ pos = False
             "You admire the effort Cadence put into her outfit."
@@ -62,7 +65,8 @@ label date1:
             c  "\"T-thank you. I was hoping you'd notice.\""
 
             jump movieSnack
-        
+
+        # Negative response
         if neg:
             $ neg = False
             "You stare at Cadence's outfit."
@@ -86,23 +90,28 @@ label date1:
         pov "\"I've got our tickets already.\""
         pov "\"Want to grab some snacks before it starts?\""
 
+        # Snack choices
         menu: 
+            # Negative choice
             "Nerds candy":
                 $ neg = True
                 $ cadence.subAffection()
                 jump movieSnackChoice
-             
+            
+            # Positive choice
             "Popcorn":
                 $ pos = True
                 $ cadence.addAffection()
                 jump movieSnackChoice
             
+            # Neutral choice
             "Chocolate":
                 $ neut = True
                 jump movieSnackChoice
 
     # Snack response
     label movieSnackChoice: 
+        # Positive response
         if pos: 
             $ pos = False
             pov "\"Want to split some popcorn?\""
@@ -116,6 +125,7 @@ label date1:
             c  "\"You do know the way to my heart!\""
             jump movieViewing
 
+        # Neutral response
         if neut: 
             $ neut = False
             pov "\"Do you wanna get some chocolate?\""
@@ -129,6 +139,7 @@ label date1:
             c  "\"I might steal a piece when you're not looking!\""
             jump movieViewing
 
+        # Negative response
         if neg: 
             $ neg = False
             pov "\"I'm grabbing Nerds candy.\""
@@ -142,7 +153,7 @@ label date1:
             c  "\"I'll pass.\"" 
             jump movieViewing
        
-    # Post movie
+    # Post movie scene
     label movieViewing: 
         show movie normal_c at smallSize, default_pos
 
