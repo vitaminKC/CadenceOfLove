@@ -33,22 +33,27 @@ label intro:
 
     c "\"Hellooo? What are you thinking about so deeply?\""
 
+    # Response choices
     menu: 
         "\"You.\"":
+            # Positive choice
             $ pos = True
             $ cadence.addAffection()
             jump introChoice
 
+        # Neutral choice
         "\"Nothing, don't worry about it.\"":
             $ neut = True
             jump introChoice
 
+        # Negative choice
         "\"Mind your own business.\"":
             $ neg = True
             $ cadence.subAffection()
             jump introChoice
 
     label introChoice: 
+        # Positive response
         if pos: 
             $ pos = False
             show uniform normal_c at smallSize, default_pos
@@ -69,6 +74,7 @@ label intro:
 
             jump common
 
+        # Neutral response
         if neut: 
             $ neut = False
             show uniform normal_c at smallSize, default_pos
@@ -85,6 +91,7 @@ label intro:
 
             jump common
 
+        # Negative response
         if neg: 
             $ neg = False
             show uniform normal_c at smallSize, default_pos
@@ -103,7 +110,6 @@ label intro:
             jump common
 
     label common: 
-
         pov "Alright, I've decided."
         pov "I'm going to tell her how I feel."
         pov "I have one week left to try to win her over."
