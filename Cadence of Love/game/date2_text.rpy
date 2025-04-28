@@ -1,3 +1,4 @@
+# Text after date 2
 label date2_text:
     scene bg bedroom
     with fade
