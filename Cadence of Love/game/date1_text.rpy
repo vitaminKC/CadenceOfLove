@@ -1,6 +1,5 @@
 label date1Text: 
-    scene bg bedroom
-    with fade
+    scene bg bedroom with fade
 
     "Later that evening..."
     "You received a text from Cadence!"
@@ -15,22 +14,27 @@ label date1Text:
     c "\"oh! that reminds me...\""
     c "\"what kind of movies do you usually like to watch?\""
 
+    # Choice menu
     menu: 
+        # Neutral choice
         "Horror":
             $ neut = True
             jump movieTextResponse
         
+        # Positive choice
         "Romance":
             $ pos = True
             $ cadence.addAffection()
             jump movieTextResponse
 
+        # Negative choice
         "\"I hate movies.\"":
             $ neg = True
             $ cadence.subAffection()
             jump movieTextResponse
 
     label movieTextResponse:
+        # Postive response
         if pos: 
             $ pos = False
             show uniform normal_c at smallSize, default_pos
@@ -61,6 +65,7 @@ label date1Text:
 
             jump StartWork
 
+        # Neutral response
         if neut: 
             $ neut = False
             show uniform normal_c at smallSize, default_pos
@@ -77,6 +82,7 @@ label date1Text:
 
             jump StartWork
         
+        # Negative response
         if neg: 
             $ neg = False
             show uniform normal_c at smallSize, default_pos
