@@ -14,9 +14,9 @@ init python:
 
         # Buys flowers for $70 and adds affection
         def buy_flowers(self):
-            if cadence.getMoney() >= 70:
+            if cadence.getMoney() >= 65:
                 self.flowers += 1
-                cadence.subMoney(70)
+                cadence.subMoney(65)
                 cadence.addAffection()
                 cadence.addAffection()
                 cadence.addAffection()

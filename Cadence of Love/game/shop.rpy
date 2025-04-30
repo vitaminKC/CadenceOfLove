@@ -17,7 +17,7 @@ label shop:
 
 label EndShop:
     # Summary of shop experience
-    "You bought [player_items.flowers] flowers, [player_items.choco] chocolates, and [player_items.teddy] teddy bears."
+    "You bought [player_items.flowers] flower(s), [player_items.choco] chocolate(s), and [player_items.teddy] teddy bear(s)."
     "Your affection is now [cadence.getAffection()]."
 
     # Continues with the story where they left off

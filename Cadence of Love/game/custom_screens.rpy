@@ -136,7 +136,7 @@ screen shop():
         idle "shop flower.png"
         action Function(player_items.buy_flowers)
 
-    text "Flowers: $70":
+    text "Flowers: $65":
         xpos 855
         ypos 450 
         size 20
