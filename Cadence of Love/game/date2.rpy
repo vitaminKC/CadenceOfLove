@@ -15,6 +15,7 @@ label date2:
         "Walk up from behind her and scare her.": 
             $ neg = True
             $ cadence.subAffection()
+            "Your affection went down by 10."
             jump studyResponse
 
         # Neutral choice
@@ -26,6 +27,7 @@ label date2:
         "Walk up and greet her.":
             $ pos = True
             $ cadence.addAffection()
+            "Your affection went up by 10!"
             jump studyResponse
 
     # Greet responses
@@ -104,6 +106,7 @@ label date2:
             "Offer to help.":
                 $ pos = True
                 $ cadence.addAffection()
+                "Your affection went up by 10!"
                 jump studyHelpChoice
 
             # Neutral choice
@@ -117,6 +120,7 @@ label date2:
                 $ neg = True
                 $ cadence.subAffection()
                 $ cadence.subAffection()
+                "Your affection went down by 20."
                 jump studyHelpChoice
 
     # Help Response

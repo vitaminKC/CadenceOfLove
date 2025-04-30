@@ -39,6 +39,7 @@ label intro:
             # Positive choice
             $ pos = True
             $ cadence.addAffection()
+            "Your affection went up by 10!"
             jump introChoice
 
         # Neutral choice
@@ -50,6 +51,7 @@ label intro:
         "\"Mind your own business.\"":
             $ neg = True
             $ cadence.subAffection()
+            "Your affection went down by 10."
             jump introChoice
 
     label introChoice: 

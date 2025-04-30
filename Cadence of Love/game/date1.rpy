@@ -38,6 +38,7 @@ label date1:
         "Compliment her outfit":
             $ pos = True
             $ cadence.addAffection()
+            "Your affection went up by 10!"
             jump movieCompliment
         
         "Continue":
@@ -46,6 +47,7 @@ label date1:
         "\"Red isn't really your color\"":
             $ neg = True
             $ cadence.subAffection()
+            "Your affection went down by 10."
             jump movieCompliment
     
     # Compliment response
@@ -96,12 +98,14 @@ label date1:
             "Nerds candy":
                 $ neg = True
                 $ cadence.subAffection()
+                "Your affection went down by 10."
                 jump movieSnackChoice
             
             # Positive choice
             "Popcorn":
                 $ pos = True
                 $ cadence.addAffection()
+                "Your affection went up by 10!"
                 jump movieSnackChoice
             
             # Neutral choice

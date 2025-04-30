@@ -14,6 +14,7 @@ label intro_text:
         "\"Heyyyyy\"": 
             $ pos = True
             $ cadence.addAffection()
+            "Your affection went up by 10!"
             jump introTextChoices
         
         # Neutral choice
@@ -25,6 +26,7 @@ label intro_text:
         "Leave her on read.":
             $ neg = True
             $ cadence.subAffection()
+            "Your affection went down by 10."
             jump introTextChoices
 
     label introTextChoices:
