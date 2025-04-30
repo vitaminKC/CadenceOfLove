@@ -11,7 +11,6 @@ init python:
                 self.teddy += 1
                 cadence.subMoney(30)
                 cadence.addAffection()
-                "Your affection went up by 10!"
 
         # Buys flowers for $70 and adds affection
         def buy_flowers(self):
@@ -21,7 +20,6 @@ init python:
                 cadence.addAffection()
                 cadence.addAffection()
                 cadence.addAffection()
-                "Your affection went up by 30!"
 
         # Buys chocolates for $50 and adds affection
         def buy_choco(self):
@@ -30,7 +28,6 @@ init python:
                 cadence.subMoney(50)
                 cadence.addAffection()
                 cadence.addAffection()
-                "Your affection went up by 20!"
         
         # Resets items in inventory after affection is gained
         def reset_items(self):
